@@ -20,8 +20,8 @@ git clone https://github.com/larissavaladao/py6s_harmonize_sample.git
 
 cd py6s_harmonize_sample/
 
-mv jupyter_notebooks ../gee-atmcorr-S2
+mv registering_atmCorrection ../gee-atmcorr-S2
 
-cd ../gee-atmcorr-S2/jupyter_notebooks
+cd ../gee-atmcorr-S2/registering_atmCorrection
 
 jupyter-notebook py6s_correction.ipynb  --ip='*' --port=8888 --allow-root
