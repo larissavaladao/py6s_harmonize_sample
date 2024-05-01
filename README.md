@@ -1,27 +1,15 @@
 # Implementation of Py6S, atmospheric correction and hamonization of Landsat and Sentinel 2 image collections timeseries over water pixel sampling
 ## Atmospheric correction
-(@Dinha explicar o processo de como colocar a imagem que vc fez que eu vou colocar na pasta DOCKER para que seguindo os outros passos que voce me passou de tudo certo)
+The notebooks and its intructions to implement th Py6S correction as wel as registering the images and reprojecting all of them three collections to the same projection and scale are available in folder "1.register_py6sCorrection"
 
-git clone https://github.com/gee-community/ee-jupyter-contrib/
+## Cloud Masking and deglint 
+Functions used are implemented in the notebook stored in folder "2.cloudMask_deglint"
 
+## Sampling 3x3 pixel window of points
+Functions used are implemented in the notebook stored in folder "3.Sampling"
 
-cd  ../tree/master/docker/atmcorr-ee
+## Data availability
+The data used to implement this analysis is available at  (CITE ARTICLE JEREMIE)
 
-
-docker build . -t atmcorr-ee
-
-docker run -i -t -p 8888:8888 atmcorr-ee
-
-gcloud auth login 
-
-git clone https://github.com/samsammurphy/gee-atmcorr-S2
-
-git clone https://github.com/larissavaladao/py6s_harmonize_sample.git
-
-cd py6s_harmonize_sample/
-
-mv registering_atmCorrection ../gee-atmcorr-S2
-
-cd ../gee-atmcorr-S2/registering_atmCorrection
-
-jupyter-notebook py6s_correction.ipynb  --ip='*' --port=8888 --allow-root
+## References
+citar referencias usadas
