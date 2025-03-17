@@ -3,7 +3,7 @@ library(readr)
 
 data_select <- as.data.frame(read.csv("filled_data.csv"))
 data_select<-select(data_select, area_km2  , mean_SPM  , mean_precipitation,
-                    discharge_mean ,mean_u__wind,mean_v__wind,year)
+                    discharge_mean ,mean_u__wind,mean_v__wind,water_period)
 
 head(data_select)
 summary(data_select)

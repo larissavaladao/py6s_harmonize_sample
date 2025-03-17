@@ -22,12 +22,10 @@ dados_comp <- complete(dados_imp, 4)#numero do dataset cujas imputa??es vc quer 
 dados_comp
 
 
-selecao <- select(data, -area_km2, -mean_precipitation,-discharge_mean,-mean_u__wind,-mean_v__wind)
-selecao$area_km2 <- dados_comp$area_km2
-selecao$mean_precipitation <- dados_comp$mean_precipitation
+selecao <- select(data, -discharge_mean)
+
 selecao$discharge_mean <- dados_comp$discharge_mean
-selecao$mean_u__wind <- dados_comp$mean_u__wind
-selecao$mean_v__wind <- dados_comp$mean_v__wind
+
 write.csv(selecao, file = "filled_data.csv")
 
 ####################################################################################
@@ -114,23 +112,23 @@ library(psych)
 #testar se a covari?ncia ? linear - verificar scatter plot
 #Serra da Mesa
 ggscatter(data_select, x = 'mean_SPM', y = 'area_km2', add = 'reg.line', conf.int = TRUE,
-          cor.coef = TRUE, cor.method = 'pearson', xlab = 'mean_SPM',
+          cor.coef = TRUE, cor.method = 'spearman', xlab = 'mean_SPM',
           ylab = 'area_km2') #cov linear
 
 ggscatter(data_select, x = 'mean_SPM', y = 'mean_precipitation', add = 'reg.line', conf.int = TRUE,
-          cor.coef = TRUE, cor.method = 'pearson', xlab = 'mean_SPM', 
+          cor.coef = TRUE, cor.method = 'spearman', xlab = 'mean_SPM', 
           ylab = 'mean_precipitation') #cov linear
 
 ggscatter(data_select, x = 'mean_SPM', y = 'discharge_mean', add = 'reg.line', conf.int = TRUE,
-          cor.coef = TRUE, cor.method = 'pearson', xlab = 'mean_SPM', 
+          cor.coef = TRUE, cor.method = 'spearman', xlab = 'mean_SPM', 
           ylab = 'discharge_mean') #cov linear
 
 ggscatter(data_select, x = 'mean_SPM', y = 'mean_u__wind', add = 'reg.line', conf.int = TRUE,
-          cor.coef = TRUE, cor.method = 'pearson', xlab = 'mean_SPM', 
+          cor.coef = TRUE, cor.method = 'spearman', xlab = 'mean_SPM', 
           ylab = 'mean_u__wind') #cov linear
 
 ggscatter(data_select, x = 'mean_SPM', y = 'mean_v__wind', add = 'reg.line', conf.int = TRUE,
-          cor.coef = TRUE, cor.method = 'pearson', xlab = 'mean_SPM', 
+          cor.coef = TRUE, cor.method = 'spearman', xlab = 'mean_SPM', 
           ylab = 'mean_v__wind') #cov linear
 
 #matriz de corela??o############################################################
