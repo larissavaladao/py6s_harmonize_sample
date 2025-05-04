@@ -1,9 +1,8 @@
-#definir diret?rio de trabalho e importar dados da tabela excel##################
-#setwd("C:/Users/l_v_v/Documents/GitHub/py6s_harmonize_sample/8.PCA_analysis")
+##################################################################################
+### DADOS MENSAIS
 
-setwd("C:/Users/l_v_v/Documents/GitHub/py6s_harmonize_sample/datasets/Parameters Time series/merged_df")
 library(readr)
-data <- as.data.frame(read.csv("C:/Users/l_v_v/Documents/GitHub/py6s_harmonize_sample/datasets/Parameters Time series/merged_df/df_merged.csv"))
+data <- as.data.frame(read.csv("C:/Users/l_v_v/Documents/GitHub/time_series_curuai/datasets/Parameters Time series/merged_df/df_merged.csv"))
 head(data)
 summary(data)
 
@@ -134,7 +133,7 @@ ggscatter(data_select, x = 'mean_SPM', y = 'mean_v__wind', add = 'reg.line', con
 #matriz de corela??o############################################################
 
 data_select<-select(data_select, area_km2  , mean_SPM  , mean_precipitation,
-                   discharge_mean ,mean_u__wind,mean_v__wind)
+                    discharge_mean ,mean_u__wind,mean_v__wind)
 correlation <- cor(data_select, method = 'spearman')
 
 corrplot::corrplot.mixed(correlation, upper = 'ellipse', lower = 'number', las = 1)
