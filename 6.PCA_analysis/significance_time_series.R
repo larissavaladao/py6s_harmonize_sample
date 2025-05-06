@@ -1,3 +1,9 @@
+#avaliar significancia das tendencias se necessário
+#ajustar script para CURUAI
+
+
+
+
 #definir diret?rio de trabalho e importar dados da tabela excel
 setwd("C:/Users/Larissa/OneDrive - unb.br/Materias/Processamento de imagens/trabalho/dados")
 setwd("C:/Users/l_v_v/OneDrive - unb.br/Materias/Processamento de imagens/trabalho/dados")

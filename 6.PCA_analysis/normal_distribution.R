@@ -1542,8 +1542,8 @@ write.csv(correlation_LW_R_pea, file = "correlationR_pea.csv")
 write.csv(correlation_HW_F_sp, file = "correlationHW_F_sp.csv")
 write.csv(correlation_HW_F_pea, file = "correlationHW_F_pea.csv")
 
-#verificar se as correla??es s?o significativas##################################
-
+#verificar se as correlacoes sao significativas##################################
+### fazer para o dataset escolhiodo
 cor.test(data_select$mean_SPM, data_select$area_km2, method = 'spearman')
 cor.test(data_select$mean_SPM, data_select$mean_precipitation, method = 'spearman')
 cor.test(data_select$mean_SPM, data_select$mean_discharge, method = 'spearman')
